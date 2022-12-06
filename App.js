@@ -59,10 +59,36 @@ export default function App() {
 
         </View>
 
-        <View style = {styles.contents_area_style}>
-          {/** Contents area */}
 
+        <View style = {styles.container}>
+          {/** contents box */}
+        <ScrollView 
+        contentContainerStyle = {{ borderWidth:1}}
+        >
+          <View
+            style = {{borderWidth:1, height : 400}}
+            >
+            <Text>temp</Text>
+          </View>
+          <View
+            style = {{borderWidth:1, height : 400}}
+            >
+            <Text>temp</Text>
+          </View>
+          <View
+            style = {{borderWidth:1, height : SCREEM_HEIGHT- 300}}
+            >
+            <Text>temp</Text>
+          </View>
+          <View
+            style = {{borderWidth:1, height : 400}}
+            >
+            <Text>temp</Text>
+          </View>
+
+        </ScrollView>
         </View>
+          
 
         <View style = {{flex:2, backgroundColor:"#fbfbfb"}}>
 
@@ -129,11 +155,7 @@ export default function App() {
 
 
 
-        <View style = {styles.Floating_button_style} >
-          {/** Floating button */}
-          
-
-        </View>
+        
 
 
       </View>
@@ -149,7 +171,7 @@ const styles = StyleSheet.create({
     paddingBottom: 34,
   },
   container: {
-    flex: 1,
+    flex: 100,
     backgroundColor: '#fff',
   },
 
@@ -157,7 +179,8 @@ const styles = StyleSheet.create({
   header_area_style: {
     backgroundColor: '#fff',
     flex:13,
-    flexDirection: "row"
+    flexDirection: "row",
+    //borderWidth:1
   },
   header_bannerbox_area_style: {
     //borderWidth:1,
@@ -185,7 +208,7 @@ const styles = StyleSheet.create({
   ,
   contents_area_style: {
     flex:100,
-    backgroundColor: "#fff"
+    backgroundColor: "#2f2f2f"
   },
 
 
@@ -196,6 +219,7 @@ const styles = StyleSheet.create({
     flex:8,
     backgroundColor: "#fbfbfb",
     flexDirection:"row",
+    //borderWidth:1
     //marginTop:10
   },
   Tabber_button_area_style:{
