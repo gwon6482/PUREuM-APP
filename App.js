@@ -1,10 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import { Platform,StyleSheet, Text, View, ScrollView, Image, Dimensions } from 'react-native';
+import { Platform,StyleSheet, Text, View, ScrollView, Image, Dimensions,TouchableHighlight  } from 'react-native';
 import { useFonts } from 'expo-font';
 import { React,useCallback, useEffect, useState } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
 import   Constants  from 'expo-constants';
 import { SafeAreaView } from 'react-navigation'
+
+
+// svg image import
 import Alarmsvgimport from "./assets/svgs/bellicon_svg";
 import Homesvgimport from "./assets/svgs/home_icon_svg"
 import Calendarsvgimport from "./assets/svgs/calendericon_svg"
@@ -20,6 +23,21 @@ function R_SIZE(x){
   return (SCREEM_WIDTH / 428) * x
 }
 
+function HomeButton_onPress(){
+  console.log('Home button pressed!!')
+}
+
+function CalendarButton_onPress(){
+  console.log('Calendar button pressed!!')
+}
+
+function FilesButton_onPress(){
+  console.log('Files button pressed!!')
+}
+
+function SettingButton_onPress(){
+  console.log('Setting button pressed!!')
+}
 
 export default function App() {
 
@@ -63,28 +81,15 @@ export default function App() {
         <View style = {styles.container}>
           {/** contents box */}
         <ScrollView 
-        contentContainerStyle = {{ borderWidth:1}}
+        contentContainerStyle = {{}}
+        showsVerticalScrollIndicator = {false}
         >
-          <View
-            style = {{borderWidth:1, height : 400}}
-            >
-            <Text>temp</Text>
-          </View>
-          <View
-            style = {{borderWidth:1, height : 400}}
-            >
-            <Text>temp</Text>
-          </View>
-          <View
-            style = {{borderWidth:1, height : SCREEM_HEIGHT- 300}}
-            >
-            <Text>temp</Text>
-          </View>
-          <View
-            style = {{borderWidth:1, height : 400}}
-            >
-            <Text>temp</Text>
-          </View>
+          <View style = {{height : 400, backgroundColor:"#37e8ec"}} ></View>
+          <View style = {{height : 400, backgroundColor:"#2aabae"}} ></View>
+          <View style = {{height : 400, backgroundColor:"#8ae6e8"}} ></View>
+          <View style = {{height : 400, backgroundColor:"#bceaeb"}} ></View>
+          <View style = {{height : 400}} ></View>
+          
 
         </ScrollView>
         </View>
@@ -100,9 +105,18 @@ export default function App() {
 
           <View style={styles.Tabber_button_area_style}>
             {/** home button area */}
-            <View style ={styles.Tabber_button_icon_style}>
-              <Homesvgimport/>
-            </View>
+
+
+            <TouchableHighlight
+              onPress={HomeButton_onPress}
+              activeOpacity = {1}
+              underlayColor = {'#fff'}
+              >
+              <View style ={styles.Tabber_button_icon_style}>
+                <Homesvgimport/>
+              </View>
+
+            </TouchableHighlight>
             <View style = {styles.Tabber_font_box_style}>
               <Text style = {styles.Tabber_font_style}>Home</Text>
             </View>
@@ -112,9 +126,17 @@ export default function App() {
 
           <View style={styles.Tabber_button_area_style}>
             {/** calender button area*/}
+
+            <TouchableHighlight
+              onPress={CalendarButton_onPress}
+              activeOpacity = {1}
+              underlayColor = {'#fff'}>
+            
             <View style = {styles.Tabber_button_icon_style}>
               <Calendarsvgimport />
             </View>
+
+            </TouchableHighlight>
             <View style = {styles.Tabber_font_box_style}>
               <Text style = {styles.Tabber_font_style}>
                 Calendar
@@ -125,9 +147,15 @@ export default function App() {
 
           <View style={styles.Tabber_button_area_style}>
             {/** files button area */}
-            <View style ={styles.Tabber_button_icon_style}>
-              <Filessvgimport/>
-            </View>
+
+            <TouchableHighlight
+              onPress={FilesButton_onPress}
+              activeOpacity = {1}
+              underlayColor = {'#fff'}>
+              <View style ={styles.Tabber_button_icon_style}>
+                <Filessvgimport/>
+              </View>
+            </TouchableHighlight>
 
             <View style = {styles.Tabber_font_box_style}>
               <Text style = {styles.Tabber_font_style}>
@@ -138,9 +166,19 @@ export default function App() {
 
           <View style={styles.Tabber_button_area_style}>
             {/** setting button area */}
-            <View style ={styles.Tabber_button_icon_style}>
-              <Settingsvgimport/>
-            </View>
+
+            <TouchableHighlight
+              onPress={SettingButton_onPress}
+              activeOpacity = {1}
+              underlayColor = {'#fff'}
+              >
+              
+              <View style ={styles.Tabber_button_icon_style}>
+                <Settingsvgimport/>
+              </View>
+
+            </TouchableHighlight>
+            
 
             <View style = {styles.Tabber_font_box_style}>
               <Text style = {styles.Tabber_font_style}>
@@ -226,21 +264,24 @@ const styles = StyleSheet.create({
     //borderWidth:1,
     flex:1,
     justifyContent: "center",
+    backgroundColor:"#fff"
   },
 
   Tabber_button_icon_style: {
+    backgroundColor: "#fff",
     alignItems:"center",
     //marginBottom: R_SIZE(6)
   },
   Tabber_font_box_style: {
     justifyContent: "center",
     alignItems:"center",
-    
+    backgroundColor : "#fff"
   },
   Tabber_font_style: {
     fontFamily: 'Nokio',
     fontSize: R_SIZE(11),
     color: '#646464',
+    backgroundColor : "#fff"
     
   }
 
