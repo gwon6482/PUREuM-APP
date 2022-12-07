@@ -41,6 +41,10 @@ function SettingButton_onPress(){
   console.log('Setting button pressed!!')
 }
 
+function AlarmButton_onPress(){
+  console.log('Alarm button pressed!!')
+}
+
 export default function App() {
 
   const [fontsLoaded] = useFonts({
@@ -71,10 +75,19 @@ export default function App() {
             <Text style = {styles.header_subbanner_font_style}>we worship god</Text>
           </View>
           <View style = {{flex:18.6}} ></View>
-          <View style = {styles.header_bellbox_style} >
+
+          <TouchableHighlight
+              onPress={AlarmButton_onPress}
+              activeOpacity = {1}
+              underlayColor = {'#fff'}
+              style = {styles.header_bellbox_style}
+              >
+          <View>
             {/** alarm bell icon */}
             <Alarmsvgimport />
           </View>
+
+          </TouchableHighlight>
           <View style = {{flex:1}} ></View>
 
         </View>
@@ -260,7 +273,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fbfbfb",
     flexDirection:"row",
     //borderWidth:1
-    //marginTop:10
+    //marginTop: R_SIZE(10)
   },
   Tabbar_button_area_style:{
     flex:1,
@@ -273,7 +286,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems:"center",
     flex:4,
-    borderWidth:1,
+    //borderWidth:1,
     justifyContent:"center"
     //marginBottom: R_SIZE(6)
   },
@@ -282,7 +295,7 @@ const styles = StyleSheet.create({
     alignItems:"center",
     backgroundColor : "#fff",
     flex:1,
-    borderWidth:1
+    //borderWidth:1
   },
   Tabbar_font_style: {
     fontFamily: 'Nokio',

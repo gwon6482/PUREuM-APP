@@ -10,7 +10,7 @@ export default function Homesvgimport(){
     </g>
 </svg>`;
 
-    const Homesvg = () => <SvgXml xml={img} height="80%" width="100%" />
+    const Homesvg = () => <SvgXml xml={img} height="60%" width="60%" />
 
     return <Homesvg />
 }

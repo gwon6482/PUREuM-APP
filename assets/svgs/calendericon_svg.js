@@ -27,7 +27,7 @@ export default function Calendarsvgimport(){
         </g>
     </svg>`;
 
-    const Canlendarsvg = () => <SvgXml xml={img} height="80%" width="80%" />
+    const Canlendarsvg = () => <SvgXml xml={img} height="60%" width="60%" />
 
     return <Canlendarsvg />
 }

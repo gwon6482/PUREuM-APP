@@ -12,7 +12,7 @@ export default function Filessvgimport(){
 </g>
 </svg>`;
 
-    const Filessvg = () => <SvgXml xml={img}  height="80%" width="80%"  />
+    const Filessvg = () => <SvgXml xml={img}  height="60%" width="60%"  />
 
     return <Filessvg />
 }

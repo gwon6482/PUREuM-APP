@@ -14,7 +14,7 @@ export default function Settingsvgimport(){
         </g>
     </svg>`;
 
-    const Settingsvg = () => <SvgXml xml={img} height="80%" width="80%" />
+    const Settingsvg = () => <SvgXml xml={img} height="60%" width="60%" />
 
     return <Settingsvg />
 }
