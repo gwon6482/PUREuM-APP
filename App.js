@@ -15,6 +15,8 @@ import Filessvgimport from "./assets/svgs/filesicon_svg"
 import Settingsvgimport from "./assets/svgs/settingicon_svg"
 
 
+console.log("rendering start")
+
 const SCREEM_WIDTH = Dimensions.get("window").width
 const SCREEM_HEIGHT = Dimensions.get("window").height
 console.log("세로: ",SCREEM_HEIGHT," 가로: ",SCREEM_WIDTH)
@@ -95,106 +97,106 @@ export default function App() {
         </View>
           
 
-        <View style = {{flex:2, backgroundColor:"#fbfbfb"}}>
 
-        </View>
-
-
-        <View style = {styles.Tabber_area_style} > 
+        <View style = {styles.Tabbar_area_style} > 
           {/** Tabbar area */}
 
-          <View style={styles.Tabber_button_area_style}>
-            {/** home button area */}
 
-
-            <TouchableHighlight
+          <TouchableHighlight
               onPress={HomeButton_onPress}
               activeOpacity = {1}
               underlayColor = {'#fff'}
+              style = {{flex:1, justifyContent:"center"}}
               >
-              <View style ={styles.Tabber_button_icon_style}>
-                <Homesvgimport/>
-              </View>
+             <View style={styles.Tabbar_button_area_style}>
+            {/** home button area */}
 
-            </TouchableHighlight>
-            <View style = {styles.Tabber_font_box_style}>
-              <Text style = {styles.Tabber_font_style}>Home</Text>
+              <View style ={styles.Tabbar_button_icon_style} id = {"ss"}
+              >
+                <Homesvgimport/>
+              </View> 
+
+            <View style = {styles.Tabbar_font_box_style}>
+              <Text style = {styles.Tabbar_font_style}>Home</Text>
             </View>
             
             
-          </View>
+            </View>
+          </TouchableHighlight>
+         
 
-          <View style={styles.Tabber_button_area_style}>
-            {/** calender button area*/}
-
-            <TouchableHighlight
+          <TouchableHighlight
               onPress={CalendarButton_onPress}
               activeOpacity = {1}
-              underlayColor = {'#fff'}>
-            
-            <View style = {styles.Tabber_button_icon_style}>
-              <Calendarsvgimport />
-            </View>
+              underlayColor = {'#fff'}
+              style = {{flex:1}}
+              >
+            <View style={styles.Tabbar_button_area_style}>
+            {/** calender button area*/}
 
-            </TouchableHighlight>
-            <View style = {styles.Tabber_font_box_style}>
-              <Text style = {styles.Tabber_font_style}>
+              <View style = {styles.Tabbar_button_icon_style}>
+                <Calendarsvgimport />
+              </View>
+            
+            <View style = {styles.Tabbar_font_box_style}>
+              <Text style = {styles.Tabbar_font_style}>
                 Calendar
               </Text>
             </View>
 
           </View>
+          </TouchableHighlight>
+          
 
-          <View style={styles.Tabber_button_area_style}>
-            {/** files button area */}
 
-            <TouchableHighlight
+          <TouchableHighlight
               onPress={FilesButton_onPress}
               activeOpacity = {1}
-              underlayColor = {'#fff'}>
-              <View style ={styles.Tabber_button_icon_style}>
+              underlayColor = {'#fff'}
+              style = {{flex:1}}>
+            <View style={styles.Tabbar_button_area_style}>
+            {/** files button area */}
+
+            
+              <View style ={styles.Tabbar_button_icon_style}>
                 <Filessvgimport/>
               </View>
-            </TouchableHighlight>
+            
 
-            <View style = {styles.Tabber_font_box_style}>
-              <Text style = {styles.Tabber_font_style}>
+            <View style = {styles.Tabbar_font_box_style}>
+              <Text style = {styles.Tabbar_font_style}>
                 Files
               </Text>
             </View>
-          </View>
+            </View>
+          </TouchableHighlight>
 
-          <View style={styles.Tabber_button_area_style}>
-            {/** setting button area */}
 
-            <TouchableHighlight
+          <TouchableHighlight
               onPress={SettingButton_onPress}
               activeOpacity = {1}
               underlayColor = {'#fff'}
+              style = {{flex:1}}
               >
+            <View style={styles.Tabbar_button_area_style}>
+              {/** setting button area */}
+
               
-              <View style ={styles.Tabber_button_icon_style}>
-                <Settingsvgimport/>
+                
+                <View style ={styles.Tabbar_button_icon_style}>
+                  <Settingsvgimport/>
+                </View>
+
+              <View style = {styles.Tabbar_font_box_style}>
+                <Text style = {styles.Tabbar_font_style}>
+                  Setting
+                </Text>
               </View>
-
-            </TouchableHighlight>
-            
-
-            <View style = {styles.Tabber_font_box_style}>
-              <Text style = {styles.Tabber_font_style}>
-                Setting
-              </Text>
             </View>
-          </View>
+
+          </TouchableHighlight>
           
         </View>
-
-
-
-
-
-        
-
 
       </View>
     </SafeAreaView>
@@ -206,7 +208,7 @@ const styles = StyleSheet.create({
   screen:{
     flex:1,
     paddingTop: Constants.statusBarHeight,
-    paddingBottom: 34,
+    paddingBottom: R_SIZE(34),
   },
   container: {
     flex: 100,
@@ -253,31 +255,36 @@ const styles = StyleSheet.create({
 
 
 
-  Tabber_area_style: {
+  Tabbar_area_style: {
     flex:8,
     backgroundColor: "#fbfbfb",
     flexDirection:"row",
     //borderWidth:1
     //marginTop:10
   },
-  Tabber_button_area_style:{
-    //borderWidth:1,
+  Tabbar_button_area_style:{
     flex:1,
     justifyContent: "center",
-    backgroundColor:"#fff"
+    backgroundColor:"#fff",
+    //borderWidth:1
   },
 
-  Tabber_button_icon_style: {
+  Tabbar_button_icon_style: {
     backgroundColor: "#fff",
     alignItems:"center",
+    flex:4,
+    borderWidth:1,
+    justifyContent:"center"
     //marginBottom: R_SIZE(6)
   },
-  Tabber_font_box_style: {
+  Tabbar_font_box_style: {
     justifyContent: "center",
     alignItems:"center",
-    backgroundColor : "#fff"
+    backgroundColor : "#fff",
+    flex:1,
+    borderWidth:1
   },
-  Tabber_font_style: {
+  Tabbar_font_style: {
     fontFamily: 'Nokio',
     fontSize: R_SIZE(11),
     color: '#646464',
