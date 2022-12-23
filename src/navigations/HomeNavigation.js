@@ -3,6 +3,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Homesvgimport from "../svgs/home_icon_svg";
 import Calendarsvgimport from "../svgs/calendericon_svg"
+import Filessvgimport from "../svgs/filesicon_svg"
+import Settingsvgimport from "../svgs/settingicon_svg"
+
 
 import Home_screen from "../screens/Home_screen";
 import Calendar_screen from "../screens/Calendar_screen";
@@ -37,14 +40,14 @@ export default function Home_navigation(){
                 name="Files"
                 component={Files_screen}
                 options = {{
-                    tabBarIcon :() => (<Homesvgimport/>) 
+                    tabBarIcon :() => (<Filessvgimport/>) 
                 }}
             />
             <Tabbar.Screen
                 name="Setting"
                 component={Setting_screen}
                 options = {{
-                    tabBarIcon :() => (<Homesvgimport/>) 
+                    tabBarIcon :() => (<Settingsvgimport/>) 
                 }}
             />
 
