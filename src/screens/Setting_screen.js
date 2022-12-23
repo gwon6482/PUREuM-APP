@@ -8,7 +8,7 @@ export default function Setting_screen( { navigation } ){
             style = {{flex:1,alignItems:"center",justifyContent:"center",backgroundColor:"#c7e1f7"}}
         >
             <Text style = {{fontSize:30}}>
-                Setting_screen
+                Setting screen
             </Text>
             
             
