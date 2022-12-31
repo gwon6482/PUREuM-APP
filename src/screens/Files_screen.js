@@ -10,8 +10,7 @@ export default function Files_screen( { navigation } ){
             <Text style = {{fontSize:30}}>
                 Files screen
             </Text>
-            
-            
+    
 
         </View>
     );
