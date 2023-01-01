@@ -44,7 +44,7 @@ export default function Home_navigation(){
                 }}
             />
             <Tabbar.Screen
-                name="Setting"
+                name="Settings"
                 component={Setting_screen}
                 options = {{
                     tabBarIcon :() => (<Settingsvgimport/>) 
