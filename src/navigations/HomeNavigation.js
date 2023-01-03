@@ -1,6 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+
 import Homesvgimport from "../svgs/home_icon_svg";
 import Calendarsvgimport from "../svgs/calendericon_svg"
 import Filessvgimport from "../svgs/filesicon_svg"
@@ -12,14 +13,24 @@ import Calendar_screen from "../screens/Calendar_screen";
 import Files_screen from "../screens/Files_screen";
 import Setting_screen from "../screens/Setting_screen";
 
+import R_SIZE from "../settingvalues/values";
+
 const Tabbar = createBottomTabNavigator();
 
 export default function Home_navigation(){
     return(
         <Tabbar.Navigator
         screenOptions={{
-            headerShown : false
+            headerShown : false,
+            tabBarStyle : {
+                position : 'absolute',
+                height: R_SIZE(100),
+                paddingBottom : R_SIZE(34)
+            }
         }}
+
+        
+        
         >
             
             <Tabbar.Screen

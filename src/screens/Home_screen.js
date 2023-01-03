@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { Platform,StyleSheet, Text, View, ScrollView, Image, Dimensions,TouchableHighlight  } from 'react-native';
+import { Platform,StyleSheet, Text, View, ScrollView, Image, Dimensions,TouchableHighlight, TouchableOpacity  } from 'react-native';
 import { React,useCallback, useEffect, useState } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
 import   Constants  from 'expo-constants';
 import { SafeAreaView } from 'react-navigation'
+//import Icon from 'react-native-vector-icons/Ionicons';
 
 
 import Alarmsvgimport from '../../assets/svgs/bellicon_svg';
@@ -20,12 +21,22 @@ function R_SIZE(x){
 function alarm_button_press(){
     console.log('alarm button press!!')
 }
+
+
+
+
 export default function Home_screen( { navigation } ){
+    let box1_size = 400
+
 
     return(
         <SafeAreaView style = {styles.screen}>
-            <View style = {styles.container}>
-                <View style = {styles.header_area_style}>
+        <View style = {styles.container}>
+
+          
+        
+
+          <View style = {styles.header_area_style}>
                     {/** Header area */}
                     <View style = {{flex:1}} ></View>
                     <View style = {styles.header_bannerbox_area_style}>
@@ -47,27 +58,90 @@ export default function Home_screen( { navigation } ){
 
                     </TouchableHighlight>
                     <View style = {{flex:1}} ></View>
-                    </View>
-                
+          </View>
+          
 
-
-                <View style = {styles.contents_area_style}>
+          <View style = {styles.contents_area_style}>
                     {/** main contents */}
 
+
                     <ScrollView 
-                    contentContainerStyle = {{}}
-                    showsVerticalScrollIndicator = {false}
-                    >
-                    <View style = {{height : 400, backgroundColor:"#37e8ec"}} ></View>
-                    <View style = {{height : 400, backgroundColor:"#2aabae"}} ></View>
-                    <View style = {{height : 400, backgroundColor:"#8ae6e8"}} ></View>
-                    <View style = {{height : 400, backgroundColor:"#bceaeb"}} ></View>
-                    <View style = {{height : 400}} ></View>
-                    
+                      contentContainerStyle = {{
+                        
+                      }}
+                      showsVerticalScrollIndicator = {false}
+                      
+                      >
+
+                      <View 
+                        style = {{
+                          backgroundColor:"#fff"
+                          }} >
+                        <Text
+                         style = {{
+                          fontFamily : 'SUIT-Medium',
+                          fontSize: '32',
+                          paddingLeft : 10,
+                         }}
+                        >이번주 말씀</Text>
+
+
+                        <View
+                          style = {{
+                            padding : 20
+
+                          }}>
+
+                          <Text
+                          style = {{
+                            fontFamily : 'SUIT-Light',
+                            fontSize: '22',
+                            paddingBottom : 10
+                          }}
+                          > 
+                            창세기 25 : 21
+                          </Text>
+
+                          <Text
+                          style = {{
+                            fontFamily : 'SUIT-Light',
+                            fontSize: '16'
+                            
+                          }}
+                          > 
+                            이삭이 그의 아내가 임신하지 못하므로 그를 위하여 여호와께 간구하매 여호와께서 그의 간구를 들으셨으므로 그의 아내 리브가가 임신하였더니
+                          </Text>
+                        
+                        </View>
+
+
+                      </View>
+                      <View style = {{backgroundColor:"#2aabae"}} ></View>
+                      <View style = {{height:R_SIZE(400), backgroundColor:"#8ae6e8"}} ></View>
+                      <View style = {{height:R_SIZE(400), backgroundColor:"#bceaeb" }} ></View>
+                      
+                      
 
                     </ScrollView>
+
+                    <TouchableOpacity 
+                      style={styles.TouchableOpacityStyle} 
+                      
+                      >
+
+                      <Image 
+                        source={{uri : 'https://reactnativecode.com/wp-content/uploads/2017/11/Floating_Button.png'}} 
+                        style={styles.FloatingButtonStyle} />
+
+                    </TouchableOpacity> 
+
+                    
+
+
+
+                    
         
-                </View>
+          </View>
 
 
             </View>
@@ -86,7 +160,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 100,
         backgroundColor: '#fff',
-        
         
       },
 
@@ -119,10 +192,37 @@ const styles = StyleSheet.create({
         alignItems:"center"
       },
 
-
-    contents_area_style: {
+      contents_area_style : {
         flex:100,
-        backgroundColor: "#fff"
+        justifyContent: 'center'
       },
+
+
+      TouchableOpacityStyle:{
+
+        position: 'absolute',
+        width: 50,
+        height: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        right: R_SIZE(24),
+        bottom: R_SIZE(116),
+      },
+
+      TouchableOpacityStyle2:{
+        position: 'absolute',
+        width: 50,
+        height: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        right: R_SIZE(90),
+        bottom: R_SIZE(116),
+      },
+   
+      FloatingButtonStyle: {
+        resizeMode: 'contain',
+        width: R_SIZE(60),
+        height: R_SIZE(60),
+      }
 
 })
