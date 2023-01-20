@@ -4,6 +4,7 @@ import { React,useCallback, useEffect, useState } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
 import   Constants  from 'expo-constants';
 import { SafeAreaView } from 'react-navigation'
+
 //import Icon from 'react-native-vector-icons/Ionicons';
 
 
@@ -74,45 +75,26 @@ export default function Home_screen( { navigation } ){
                       >
 
                       <View 
-                        style = {{
-                          backgroundColor:"#fff"
-                          }} >
-                        <Text
-                         style = {{
-                          fontFamily : 'SUIT-Medium',
-                          fontSize: '32',
-                          paddingLeft : 10,
-                         }}
-                        >이번주 말씀</Text>
+                        style = { styles.HomeContentsBox_L1} >
+                        <Text style = { styles.HomeContentsText_H1} >
+                          이번주 말씀
+                        </Text>
 
-
-                        <View
-                          style = {{
-                            padding : 20
-
-                          }}>
-
-                          <Text
-                          style = {{
-                            fontFamily : 'SUIT-Light',
-                            fontSize: '22',
-                            paddingBottom : 10
-                          }}
-                          > 
+                      <View style = { styles.HomeContentsShadowbox}>
+                        <View style = {styles.HomeContentsBox_L2}>
+                          
+                        <View style = {styles.HomeContentsBox_L3}>
+                          <Text style = { styles.HomeContentsText_H2} > 
                             창세기 25 : 21
                           </Text>
 
-                          <Text
-                          style = {{
-                            fontFamily : 'SUIT-Light',
-                            fontSize: '16'
-                            
-                          }}
-                          > 
+                          <Text style = { styles.HomeContentsText_C1 } > 
                             이삭이 그의 아내가 임신하지 못하므로 그를 위하여 여호와께 간구하매 여호와께서 그의 간구를 들으셨으므로 그의 아내 리브가가 임신하였더니
                           </Text>
-                        
                         </View>
+                      </View>
+                      
+                      </View>
 
 
                       </View>
@@ -223,6 +205,62 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
         width: R_SIZE(60),
         height: R_SIZE(60),
-      }
+      },
+
+      HomeContentsBox_L1 : {
+        backgroundColor:"#fff",
+        borderWidth:0
+      },
+
+      HomeContentsBox_L2 : {
+        paddingLeft : R_SIZE(20),
+        paddingRight : R_SIZE(20),
+        borderWidth : 0,
+        paddingBottom :0,
+        paddingTop: R_SIZE(5),
+        
+      },
+
+      HomeContentsBox_L3 : {
+          borderWidth :0,
+          borderRadius : 30,
+          paddingLeft : R_SIZE(20),
+          paddingRight: R_SIZE(20),
+          paddingTop : R_SIZE(10),
+          paddingBottom: R_SIZE(10),
+          backgroundColor:"white",
+          borderRadius:15,
+          elevation:10,
+          shadowColor: '#000',
+          shadowOffset: { width: 0, height: 5 },
+          shadowOpacity: 0.2,
+          shadowRadius: 5,
+          marginBottom : 10
+          
+      },
+
+      HomeContentsText_H1 : {
+        color: '#87C5CA'  ,
+        fontFamily : 'SUIT-Medium',
+        fontSize: R_SIZE(34),
+        paddingLeft : R_SIZE(36),
+      },
+
+      HomeContentsText_H2 : {
+        fontFamily : 'SUIT-Light',
+        fontSize: R_SIZE(22),
+        paddingBottom : 10
+      },
+
+      HomeContentsText_C1 : {
+        fontFamily : 'SUIT-Light',
+        fontSize: '16'
+      },
+
+      HomeContentsShadowbox : {
+        
+        
+        
+      },
 
 })
